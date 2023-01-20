@@ -1,0 +1,1087 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.1 (Python 3.11.1 on win32)" generated="20230120 17:14:51.223" rpa="false" schemaversion="3">
+<suite id="s1" name="Builder" source="C:\development\robot-scripts\Builder\Tests\Builder.robot">
+<test id="s1-t1" name="Verify all &quot;Help Windows&quot; load properly" line="14">
+<kw name="Begin web test" library="Common" type="SETUP">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.2s</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20230120 17:14:51.385" endtime="20230120 17:14:51.386"/>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>10s</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20230120 17:14:51.386" endtime="20230120 17:14:51.386"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230120 17:14:51.386" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20230120 17:14:51.386" endtime="20230120 17:14:52.661"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230120 17:14:52.661" endtime="20230120 17:14:52.986"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230120 17:14:52.986" level="INFO">Opening url 'https://studio.builder.ai/home'</msg>
+<status status="PASS" starttime="20230120 17:14:52.986" endtime="20230120 17:15:03.514"/>
+</kw>
+<status status="PASS" starttime="20230120 17:14:51.385" endtime="20230120 17:15:03.514"/>
+</kw>
+<kw name="Assistance windows before &quot;Home Page&quot; loads" library="BuilderRe">
+<kw name="Check if &quot;Welcome&quot; window contains correct text" library="PreHomePage">
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${WELCOME_PAGE_CONTENT.Header}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20230120 17:15:03.934" level="INFO">Current page contains text 'Welcome to Builder Studio'.</msg>
+<status status="PASS" starttime="20230120 17:15:03.515" endtime="20230120 17:15:03.934"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${WELCOME_PAGE_CONTENT.SubHead1}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20230120 17:15:04.352" level="INFO">Current page contains text 'Step 1. Choose a base'.</msg>
+<status status="PASS" starttime="20230120 17:15:03.934" endtime="20230120 17:15:04.352"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${WELCOME_PAGE_CONTENT.SubHead2}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20230120 17:15:04.769" level="INFO">Current page contains text 'Step 2. Make it your own'.</msg>
+<status status="PASS" starttime="20230120 17:15:04.352" endtime="20230120 17:15:04.769"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${WELCOME_PAGE_CONTENT.SubHead3}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20230120 17:15:05.185" level="INFO">Current page contains text 'Step 3. Plan delivery'.</msg>
+<status status="PASS" starttime="20230120 17:15:04.769" endtime="20230120 17:15:05.185"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CLICK_CHOOSE_A_BASE_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230120 17:15:05.186" level="INFO">Clicking element 'xpath=//*[@id="main"]/welcome-to-studio/div/div[2]/div[2]/button'.</msg>
+<status status="PASS" starttime="20230120 17:15:05.185" endtime="20230120 17:15:05.672"/>
+</kw>
+<status status="PASS" starttime="20230120 17:15:03.514" endtime="20230120 17:15:05.672"/>
+</kw>
+<kw name="Check if &quot;Personal Assistant&quot; loads" library="PreHomePage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${FIRST_NAME_FIELD_ASSISTANT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230120 17:15:05.672" endtime="20230120 17:15:15.266"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CLOSE_ASSISTANT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230120 17:15:15.266" level="INFO">Clicking element 'xpath=//div[@class="closeButton"]'.</msg>
+<status status="PASS" starttime="20230120 17:15:15.266" endtime="20230120 17:15:15.738"/>
+</kw>
+<status status="PASS" starttime="20230120 17:15:05.672" endtime="20230120 17:15:15.738"/>
+</kw>
+<kw name="Check if &quot;Personal Assistant&quot; loads on the Home page" library="PreHomePage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Tell me what problem your app solves and I’ll help you build it.</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230120 17:15:15.738" endtime="20230120 17:15:16.780"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${HOVER_OVER_ASSISTANT}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20230120 17:15:16.780" level="INFO">Simulating Mouse Over on element 'xpath=//*[@id="main"]/div[2]/div[1]/div/div/h2/div[2]/div[3]/div[3]'.</msg>
+<status status="PASS" starttime="20230120 17:15:16.780" endtime="20230120 17:15:17.469"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CLOSE_ASSISTANT_ON_HOME_PAGE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230120 17:15:17.469" level="INFO">Clicking element 'xpath=//*[@id="main"]/div[2]'.</msg>
+<status status="PASS" starttime="20230120 17:15:17.469" endtime="20230120 17:15:17.926"/>
+</kw>
+<status status="PASS" starttime="20230120 17:15:15.738" endtime="20230120 17:15:17.926"/>
+</kw>
+<status status="PASS" starttime="20230120 17:15:03.514" endtime="20230120 17:15:17.926"/>
+</kw>
+<kw name="End web test" library="Common" type="TEARDOWN">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20230120 17:15:17.926" endtime="20230120 17:15:20.170"/>
+</kw>
+<status status="PASS" starttime="20230120 17:15:17.926" endtime="20230120 17:15:20.170"/>
+</kw>
+<doc>User should see two pop up windows before home page</doc>
+<tag>1001</tag>
+<tag>PreHomePage</tag>
+<tag>Smoke</tag>
+<status status="PASS" starttime="20230120 17:14:51.385" endtime="20230120 17:15:20.170"/>
+</test>
+<test id="s1-t2" name="Verify &quot;Home Page&quot; loads correctly" line="19">
+<kw name="Begin web test" library="Common" type="SETUP">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.2s</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20230120 17:15:20.172" endtime="20230120 17:15:20.172"/>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>10s</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20230120 17:15:20.172" endtime="20230120 17:15:20.172"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230120 17:15:20.172" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20230120 17:15:20.172" endtime="20230120 17:15:21.348"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230120 17:15:21.348" endtime="20230120 17:15:21.666"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230120 17:15:21.666" level="INFO">Opening url 'https://studio.builder.ai/home'</msg>
+<status status="PASS" starttime="20230120 17:15:21.666" endtime="20230120 17:15:28.917"/>
+</kw>
+<status status="PASS" starttime="20230120 17:15:20.172" endtime="20230120 17:15:28.917"/>
+</kw>
+<kw name="All elements on &quot;Home Page&quot; should load correctly" library="BuilderRe">
+<kw name="Skip &quot;INTRO&quot;" library="PreHomePage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CLICK_CHOOSE_A_BASE_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230120 17:15:28.918" level="INFO">Clicking element 'xpath=//*[@id="main"]/welcome-to-studio/div/div[2]/div[2]/button'.</msg>
+<status status="PASS" starttime="20230120 17:15:28.918" endtime="20230120 17:15:29.412"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CLOSE_ASSISTANT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230120 17:15:29.412" level="INFO">Clicking element 'xpath=//div[@class="closeButton"]'.</msg>
+<status status="PASS" starttime="20230120 17:15:29.412" endtime="20230120 17:15:29.876"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CLOSE_ASSISTANT_ON_HOME_PAGE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230120 17:15:29.876" level="INFO">Clicking element 'xpath=//*[@id="main"]/div[2]'.</msg>
+<status status="PASS" starttime="20230120 17:15:29.876" endtime="20230120 17:15:30.332"/>
+</kw>
+<status status="PASS" starttime="20230120 17:15:28.918" endtime="20230120 17:15:30.332"/>
+</kw>
+<kw name="Check if all &quot;Card Filters&quot; load correctly" library="HomePage">
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${number_of_filters}</var>
+<arg>${HOME_PAGE_FILTERS}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20230120 17:15:30.544" level="INFO">${number_of_filters} = 19</msg>
+<status status="PASS" starttime="20230120 17:15:30.333" endtime="20230120 17:15:30.544"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${number_of_filters} == ${HOME_PAGE_VERIFY_NUMBER_OF_FILTERS}</arg>
+<arg>"Filters not loaded, filter number should be 19!"</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20230120 17:15:30.544" endtime="20230120 17:15:30.544"/>
+</kw>
+<status status="PASS" starttime="20230120 17:15:30.332" endtime="20230120 17:15:30.544"/>
+</kw>
+<kw name="Check if &quot;Home Page&quot; title is correct" library="HomePage">
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${HOME_PAGE_TITLE}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20230120 17:15:30.966" level="INFO">Current page contains text 'Choose a base'.</msg>
+<status status="PASS" starttime="20230120 17:15:30.545" endtime="20230120 17:15:30.966"/>
+</kw>
+<status status="PASS" starttime="20230120 17:15:30.544" endtime="20230120 17:15:30.966"/>
+</kw>
+<kw name="Check if &quot;Home Page&quot; contains filter tabs" library="HomePage">
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${number_of_filter_tabs}</var>
+<arg>${HOME_PAGE_FILTER_TABS}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20230120 17:15:31.176" level="INFO">${number_of_filter_tabs} = 3</msg>
+<status status="PASS" starttime="20230120 17:15:30.966" endtime="20230120 17:15:31.176"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${number_of_filter_tabs} == ${HOME_PAGE_VERIFY_NUMBER_OF_FILTER_TABS}</arg>
+<arg>"Filter tabs not loaded, filter tab number should be 3!"</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20230120 17:15:31.176" endtime="20230120 17:15:31.176"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${HOME_PAGE_EXPLANATION}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20230120 17:15:31.598" level="INFO">Current page contains text 'Choose up to 3 templates (apps similar to your idea) to use as a base.'.</msg>
+<status status="PASS" starttime="20230120 17:15:31.176" endtime="20230120 17:15:31.598"/>
+</kw>
+<status status="PASS" starttime="20230120 17:15:30.966" endtime="20230120 17:15:31.598"/>
+</kw>
+<kw name="Check if &quot;Home Page&quot; contains &quot;Tool Bar&quot;" library="HomePage">
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${HOME_PAGE_SEARCH_BUTTON}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20230120 17:15:31.807" level="INFO">Current page contains element 'xpath=//*[@id="main"]/div[2]/div[1]/div/div/div/div[1]/button/em'.</msg>
+<status status="PASS" starttime="20230120 17:15:31.598" endtime="20230120 17:15:31.807"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${HOME_PAGE_CUSTOM_TEMPLATE_BUTTON}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20230120 17:15:32.016" level="INFO">Current page contains element 'xpath=//*[@id="main"]/div[2]/div[1]/div/div/div/button'.</msg>
+<status status="PASS" starttime="20230120 17:15:31.807" endtime="20230120 17:15:32.016"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${HOME_PAGE_SORT_BUTTON}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20230120 17:15:32.231" level="INFO">Current page contains element 'xpath=//*[@id="main"]/div[2]/div[1]/div/div/div/div[2]/app-sort/div/button'.</msg>
+<status status="PASS" starttime="20230120 17:15:32.016" endtime="20230120 17:15:32.231"/>
+</kw>
+<status status="PASS" starttime="20230120 17:15:31.598" endtime="20230120 17:15:32.231"/>
+</kw>
+<kw name="Check if &quot;Home Page&quot; loaded cards" library="HomePage">
+<kw name="Log" library="BuiltIn">
+<arg>If User scrolls to the bottom of the page the number of the Cards should increase by incrament of 15. Initial number of loaded Cards should be 15.</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230120 17:15:32.231" level="INFO">If User scrolls to the bottom of the page the number of the Cards should increase by incrament of 15. Initial number of loaded Cards should be 15.</msg>
+<status status="PASS" starttime="20230120 17:15:32.231" endtime="20230120 17:15:32.231"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${number_of_cards}</var>
+<arg>${HOME_PAGE_CARDS}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20230120 17:15:32.444" level="INFO">${number_of_cards} = 15</msg>
+<status status="PASS" starttime="20230120 17:15:32.231" endtime="20230120 17:15:32.444"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${number_of_cards} == ${HOME_PAGE_INITIAL_LOADED_CARDS}</arg>
+<arg>"Cards not loaded, card number should be 15!"</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20230120 17:15:32.444" endtime="20230120 17:15:32.444"/>
+</kw>
+<status status="PASS" starttime="20230120 17:15:32.231" endtime="20230120 17:15:32.444"/>
+</kw>
+<status status="PASS" starttime="20230120 17:15:28.917" endtime="20230120 17:15:32.444"/>
+</kw>
+<kw name="End web test" library="Common" type="TEARDOWN">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20230120 17:15:32.445" endtime="20230120 17:15:35.119"/>
+</kw>
+<status status="PASS" starttime="20230120 17:15:32.445" endtime="20230120 17:15:35.119"/>
+</kw>
+<doc>User should see all elements on the Home Page.</doc>
+<tag>1002</tag>
+<tag>HomePage</tag>
+<tag>Smoke</tag>
+<status status="PASS" starttime="20230120 17:15:20.171" endtime="20230120 17:15:35.119"/>
+</test>
+<test id="s1-t3" name="User should be able to use &quot;Filter Tabs&quot;" line="24">
+<kw name="Begin web test" library="Common" type="SETUP">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.2s</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20230120 17:15:35.121" endtime="20230120 17:15:35.121"/>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>10s</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20230120 17:15:35.121" endtime="20230120 17:15:35.121"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230120 17:15:35.121" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20230120 17:15:35.121" endtime="20230120 17:15:36.298"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230120 17:15:36.298" endtime="20230120 17:15:36.613"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230120 17:15:36.613" level="INFO">Opening url 'https://studio.builder.ai/home'</msg>
+<status status="PASS" starttime="20230120 17:15:36.613" endtime="20230120 17:15:43.424"/>
+</kw>
+<status status="PASS" starttime="20230120 17:15:35.120" endtime="20230120 17:15:43.424"/>
+</kw>
+<kw name="All &quot;Filter Tabs&quot; should work" library="BuilderRe">
+<kw name="Skip &quot;INTRO&quot;" library="PreHomePage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CLICK_CHOOSE_A_BASE_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230120 17:15:43.425" level="INFO">Clicking element 'xpath=//*[@id="main"]/welcome-to-studio/div/div[2]/div[2]/button'.</msg>
+<status status="PASS" starttime="20230120 17:15:43.425" endtime="20230120 17:15:43.901"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CLOSE_ASSISTANT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230120 17:15:43.901" level="INFO">Clicking element 'xpath=//div[@class="closeButton"]'.</msg>
+<status status="PASS" starttime="20230120 17:15:43.901" endtime="20230120 17:15:44.366"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CLOSE_ASSISTANT_ON_HOME_PAGE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230120 17:15:44.366" level="INFO">Clicking element 'xpath=//*[@id="main"]/div[2]'.</msg>
+<status status="PASS" starttime="20230120 17:15:44.366" endtime="20230120 17:15:44.819"/>
+</kw>
+<status status="PASS" starttime="20230120 17:15:43.425" endtime="20230120 17:15:44.819"/>
+</kw>
+<kw name="Check if all &quot;Card Filters&quot; load correctly" library="HomePage">
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${number_of_filters}</var>
+<arg>${HOME_PAGE_FILTERS}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20230120 17:15:45.030" level="INFO">${number_of_filters} = 19</msg>
+<status status="PASS" starttime="20230120 17:15:44.819" endtime="20230120 17:15:45.030"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${number_of_filters} == ${HOME_PAGE_VERIFY_NUMBER_OF_FILTERS}</arg>
+<arg>"Filters not loaded, filter number should be 19!"</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20230120 17:15:45.030" endtime="20230120 17:15:45.030"/>
+</kw>
+<status status="PASS" starttime="20230120 17:15:44.819" endtime="20230120 17:15:45.030"/>
+</kw>
+<kw name="Check if &quot;Pro&quot; filter tab works" library="HomePage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${HOME_PAGE_CLICK_PRO_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230120 17:15:45.031" level="INFO">Clicking element 'xpath=//*[@id="main"]/div[2]/div[2]/div[1]/div/ul/li[2]'.</msg>
+<status status="PASS" starttime="20230120 17:15:45.031" endtime="20230120 17:15:45.503"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${HOME_PAGE_PRO_BUTTON_DESCRIPTION}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230120 17:15:45.503" endtime="20230120 17:15:45.720"/>
+</kw>
+<status status="PASS" starttime="20230120 17:15:45.030" endtime="20230120 17:15:45.720"/>
+</kw>
+<kw name="Cancel &quot;Assistant&quot;" library="PreHomePage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CLOSE_ASSISTANT_ON_HOME_PAGE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230120 17:15:45.720" level="INFO">Clicking element 'xpath=//*[@id="main"]/div[2]'.</msg>
+<status status="PASS" starttime="20230120 17:15:45.720" endtime="20230120 17:15:46.156"/>
+</kw>
+<status status="PASS" starttime="20230120 17:15:45.720" endtime="20230120 17:15:46.156"/>
+</kw>
+<kw name="Check if &quot;Store&quot; filter tab works" library="HomePage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${HOME_PAGE_CLICK_STORE_BUTTON}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230120 17:15:46.156" endtime="20230120 17:15:47.826"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${HOME_PAGE_CLICK_STORE_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230120 17:15:47.827" level="INFO">Clicking element 'xpath=//*[@id="main"]/div[2]/div[2]/div[1]/div/ul/li[3]'.</msg>
+<status status="PASS" starttime="20230120 17:15:47.826" endtime="20230120 17:15:48.305"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${HOME_PAGE_STORE_BUTTON_DESCRIPTION}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230120 17:15:48.305" endtime="20230120 17:15:48.520"/>
+</kw>
+<status status="PASS" starttime="20230120 17:15:46.156" endtime="20230120 17:15:48.520"/>
+</kw>
+<status status="PASS" starttime="20230120 17:15:43.425" endtime="20230120 17:15:48.520"/>
+</kw>
+<kw name="End web test" library="Common" type="TEARDOWN">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20230120 17:15:48.521" endtime="20230120 17:15:50.770"/>
+</kw>
+<status status="PASS" starttime="20230120 17:15:48.520" endtime="20230120 17:15:50.770"/>
+</kw>
+<doc>User clicks on Tabs located above the Cards in the Home Page. 3 Tabs avalaible "All", "Pro", "Store". "All" button is tested in the previous test case.</doc>
+<tag>1003</tag>
+<tag>HomePage</tag>
+<tag>Smoke</tag>
+<status status="PASS" starttime="20230120 17:15:35.120" endtime="20230120 17:15:50.770"/>
+</test>
+<test id="s1-t4" name="User should be able to use &quot;Search bar&quot;" line="29">
+<kw name="Begin web test" library="Common" type="SETUP">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.2s</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20230120 17:15:50.771" endtime="20230120 17:15:50.772"/>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>10s</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20230120 17:15:50.772" endtime="20230120 17:15:50.772"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230120 17:15:50.772" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20230120 17:15:50.772" endtime="20230120 17:15:55.998"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230120 17:15:55.998" endtime="20230120 17:15:56.318"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230120 17:15:56.318" level="INFO">Opening url 'https://studio.builder.ai/home'</msg>
+<status status="PASS" starttime="20230120 17:15:56.318" endtime="20230120 17:16:06.002"/>
+</kw>
+<status status="PASS" starttime="20230120 17:15:50.771" endtime="20230120 17:16:06.002"/>
+</kw>
+<kw name="&quot;Search bar&quot; should work" library="BuilderRe">
+<kw name="Skip &quot;INTRO&quot;" library="PreHomePage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CLICK_CHOOSE_A_BASE_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230120 17:16:06.003" level="INFO">Clicking element 'xpath=//*[@id="main"]/welcome-to-studio/div/div[2]/div[2]/button'.</msg>
+<status status="PASS" starttime="20230120 17:16:06.003" endtime="20230120 17:16:06.504"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CLOSE_ASSISTANT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230120 17:16:06.504" level="INFO">Clicking element 'xpath=//div[@class="closeButton"]'.</msg>
+<status status="PASS" starttime="20230120 17:16:06.504" endtime="20230120 17:16:06.972"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CLOSE_ASSISTANT_ON_HOME_PAGE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230120 17:16:06.972" level="INFO">Clicking element 'xpath=//*[@id="main"]/div[2]'.</msg>
+<status status="PASS" starttime="20230120 17:16:06.972" endtime="20230120 17:16:07.425"/>
+</kw>
+<status status="PASS" starttime="20230120 17:16:06.003" endtime="20230120 17:16:07.425"/>
+</kw>
+<kw name="Cancel &quot;Assistant&quot;" library="PreHomePage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CLOSE_ASSISTANT_ON_HOME_PAGE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230120 17:16:07.425" level="INFO">Clicking element 'xpath=//*[@id="main"]/div[2]'.</msg>
+<status status="PASS" starttime="20230120 17:16:07.425" endtime="20230120 17:16:07.888"/>
+</kw>
+<status status="PASS" starttime="20230120 17:16:07.425" endtime="20230120 17:16:07.888"/>
+</kw>
+<kw name="Check if &quot;Search bar&quot; on the Home Page works" library="HomePage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${HOME_PAGE_CLICK_SEARCH_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230120 17:16:07.888" level="INFO">Clicking element 'xpath=//*[@id="main"]/div[2]/div[1]/div/div/div/div[1]/button'.</msg>
+<status status="PASS" starttime="20230120 17:16:07.888" endtime="20230120 17:16:08.374"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random_search_term}</var>
+<arg>random.choice(${HOME_PAGE_SEARCH_EXAMPLES})</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230120 17:16:08.374" level="INFO">${random_search_term} = Facebook</msg>
+<status status="PASS" starttime="20230120 17:16:08.374" endtime="20230120 17:16:08.374"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${random_search_term}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230120 17:16:08.374" level="INFO">Facebook</msg>
+<status status="PASS" starttime="20230120 17:16:08.374" endtime="20230120 17:16:08.374"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${HOME_PAGE_SEARCH_BOX}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230120 17:16:08.374" endtime="20230120 17:16:08.793"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${HOME_PAGE_SEARCH_BOX}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230120 17:16:08.793" level="INFO">Clicking element 'xpath=//*[@id="main"]/div[2]/div[1]/div/div/div[2]/div[2]/input'.</msg>
+<status status="PASS" starttime="20230120 17:16:08.793" endtime="20230120 17:16:09.231"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${HOME_PAGE_SEARCH_BOX}</arg>
+<arg>${random_search_term}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230120 17:16:09.231" level="INFO">Typing text 'Facebook' into text field 'xpath=//*[@id="main"]/div[2]/div[1]/div/div/div[2]/div[2]/input'.</msg>
+<status status="PASS" starttime="20230120 17:16:09.231" endtime="20230120 17:16:10.014"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>"${random_search_term}"</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230120 17:16:10.014" endtime="20230120 17:16:13.944"/>
+</kw>
+<status status="PASS" starttime="20230120 17:16:07.888" endtime="20230120 17:16:13.944"/>
+</kw>
+<status status="PASS" starttime="20230120 17:16:06.002" endtime="20230120 17:16:13.944"/>
+</kw>
+<kw name="End web test" library="Common" type="TEARDOWN">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20230120 17:16:13.945" endtime="20230120 17:16:16.198"/>
+</kw>
+<status status="PASS" starttime="20230120 17:16:13.944" endtime="20230120 17:16:16.199"/>
+</kw>
+<doc>User uses the "Search bar" to find appropriate cards.</doc>
+<tag>1004</tag>
+<tag>HomePage</tag>
+<tag>Smoke</tag>
+<status status="PASS" starttime="20230120 17:15:50.771" endtime="20230120 17:16:16.199"/>
+</test>
+<test id="s1-t5" name="User should be able to see all the avalaible currencies and pick Euro" line="34">
+<kw name="Begin web test" library="Common" type="SETUP">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.2s</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20230120 17:16:16.201" endtime="20230120 17:16:16.201"/>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>10s</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20230120 17:16:16.201" endtime="20230120 17:16:16.201"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230120 17:16:16.201" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20230120 17:16:16.201" endtime="20230120 17:16:17.387"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230120 17:16:17.387" endtime="20230120 17:16:17.705"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230120 17:16:17.705" level="INFO">Opening url 'https://studio.builder.ai/home'</msg>
+<status status="PASS" starttime="20230120 17:16:17.705" endtime="20230120 17:16:26.007"/>
+</kw>
+<status status="PASS" starttime="20230120 17:16:16.200" endtime="20230120 17:16:26.007"/>
+</kw>
+<kw name="&quot;Currency&quot; button should work" library="BuilderRe">
+<kw name="Skip &quot;INTRO&quot;" library="PreHomePage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CLICK_CHOOSE_A_BASE_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230120 17:16:26.008" level="INFO">Clicking element 'xpath=//*[@id="main"]/welcome-to-studio/div/div[2]/div[2]/button'.</msg>
+<status status="PASS" starttime="20230120 17:16:26.008" endtime="20230120 17:16:26.481"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CLOSE_ASSISTANT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230120 17:16:26.482" level="INFO">Clicking element 'xpath=//div[@class="closeButton"]'.</msg>
+<status status="PASS" starttime="20230120 17:16:26.481" endtime="20230120 17:16:27.020"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CLOSE_ASSISTANT_ON_HOME_PAGE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230120 17:16:27.021" level="INFO">Clicking element 'xpath=//*[@id="main"]/div[2]'.</msg>
+<status status="PASS" starttime="20230120 17:16:27.020" endtime="20230120 17:16:27.512"/>
+</kw>
+<status status="PASS" starttime="20230120 17:16:26.007" endtime="20230120 17:16:27.512"/>
+</kw>
+<kw name="Check if all &quot;Currency&quot; is present in the list" library="TopNav">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${TOPNAV_CLICK_CURRENCY_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230120 17:16:27.512" level="INFO">Clicking element 'xpath=//*[@id="header"]/div/div/div[5]/span'.</msg>
+<msg timestamp="20230120 17:16:41.251" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230120 17:16:41.251" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;span _ngcontent-serverapp-c122="" class="sel_state"&gt;...&lt;/span&gt; is not clickable at point (1787, 31). Other element would receive the click: &lt;div _ngcontent-serverapp-c174="" class="natashPanelOverlay"&gt;&lt;/div&gt;
+  (Session info: chrome=108.0.5359.126)
+Stacktrace:
+Backtrace:
+	(No symbol) [0x0052F243]
+	(No symbol) [0x004B7FD1]
+	(No symbol) [0x003AD04D]
+	(No symbol) [0x003E28B9]
+	(No symbol) [0x003E08CC]
+	(No symbol) [0x003DE4CB]
+	(No symbol) [0x003DD164]
+	(No symbol) [0x003D32A6]
+	(No symbol) [0x003F858C]
+	(No symbol) [0x003D2BFF]
+	(No symbol) [0x003F8804]
+	(No symbol) [0x0040C9EB]
+	(No symbol) [0x003F8386]
+	(No symbol) [0x003D163C]
+	(No symbol) [0x003D269D]
+	GetHandleVerifier [0x007C9A22+2655074]
+	GetHandleVerifier [0x007BCA24+2601828]
+	GetHandleVerifier [0x005D8C0A+619850]
+	GetHandleVerifier [0x005D7830+614768]
+	(No symbol) [0x004C05FC]
+	(No symbol) [0x004C5968]
+	(No symbol) [0x004C5A55]
+	(No symbol) [0x004D051B]
+	BaseThreadInitThunk [0x75ADFEF9+25]
+	RtlGetAppContainerNamedObjectPath [0x77C47BBE+286]
+	RtlGetAppContainerNamedObjectPath [0x77C47B8E+238]
+</msg>
+<status status="FAIL" starttime="20230120 17:16:27.512" endtime="20230120 17:16:41.253"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>The actual number of "Currency" in the list is 10 but the page is made in a way that the locators are duplicated for this feature, so 20 locators means 10 "Currency".</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20230120 17:16:41.254" endtime="20230120 17:16:41.254"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${number_of_currencies}</var>
+<arg>${TOPNAV_CURRENCY_AVAILABLE}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="NOT RUN" starttime="20230120 17:16:41.254" endtime="20230120 17:16:41.254"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${number_of_currencies} == ${TOPNAV_VERIFY_CURRENCY_NUMBER}</arg>
+<arg>"Currency list not loaded, number of currency should be 10!"</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="NOT RUN" starttime="20230120 17:16:41.254" endtime="20230120 17:16:41.254"/>
+</kw>
+<status status="FAIL" starttime="20230120 17:16:27.512" endtime="20230120 17:16:41.254"/>
+</kw>
+<kw name="Change &quot;Currency&quot; to Euro" library="TopNav">
+<status status="NOT RUN" starttime="20230120 17:16:41.254" endtime="20230120 17:16:41.254"/>
+</kw>
+<status status="FAIL" starttime="20230120 17:16:26.007" endtime="20230120 17:16:41.254"/>
+</kw>
+<kw name="End web test" library="Common" type="TEARDOWN">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20230120 17:16:41.255" endtime="20230120 17:16:43.513"/>
+</kw>
+<status status="PASS" starttime="20230120 17:16:41.255" endtime="20230120 17:16:43.513"/>
+</kw>
+<doc>User opens Currency tab in the top nav, sees all the available currencies and picks EUR.</doc>
+<tag>1005</tag>
+<tag>Smoke</tag>
+<tag>TopNav</tag>
+<status status="FAIL" starttime="20230120 17:16:16.200" endtime="20230120 17:16:43.513">ElementClickInterceptedException: Message: element click intercepted: Element &lt;span _ngcontent-serverapp-c122="" class="sel_state"&gt;...&lt;/span&gt; is not clickable at point (1787, 31). Other element would receive the click: &lt;div _ngcontent-serverapp-c174="" class="natashPanelOverlay"&gt;&lt;/div&gt;
+  (Session info: chrome=108.0.5359.126)
+Stacktrace:
+Backtrace:
+	(No symbol) [0x0052F243]
+	(No symbol) [0x004B7FD1]
+	(No symbol) [0x003AD04D]
+	(No symbol) [0x003E28B9]
+	(No symbol) [0x003E08CC]
+	(No symbol) [0x003DE4CB]
+	(No symbol) [0x003DD164]
+	(No symbol) [0x003D32A6]
+	(No symbol) [0x003F858C]
+	(No symbol) [0x003D2BFF]
+	(No symbol) [0x003F8804]
+	(No symbol) [0x0040C9EB]
+	(No symbol) [0x003F8386]
+	(No symbol) [0x003D163C]
+	(No symbol) [0x003D269D]
+	GetHandleVerifier [0x007C9A22+2655074]
+	GetHandleVerifier [0x007BCA24+2601828]
+	GetHandleVerifier [0x005D8C0A+619850]
+	GetHandleVerifier [0x005D7830+614768]
+	(No symbol) [0x004C05FC]
+	(No symbol) [0x004C5968]
+	(No symbol) [0x004C5A55]
+	(No symbol) [0x004D051B]
+	BaseThreadInitThunk [0x75ADFEF9+25]
+	RtlGetAppContainerNamedObjectPath [0x77C47BBE+286]
+	RtlGetAppContainerNamedObjectPath [0x77C47B8E+238]
+</status>
+</test>
+<test id="s1-t6" name="User should be able to see and use the &quot;Live Help&quot; feature" line="39">
+<kw name="Begin web test" library="Common" type="SETUP">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.2s</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20230120 17:16:43.516" endtime="20230120 17:16:43.516"/>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>10s</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20230120 17:16:43.516" endtime="20230120 17:16:43.516"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230120 17:16:43.517" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20230120 17:16:43.516" endtime="20230120 17:16:44.701"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230120 17:16:44.701" endtime="20230120 17:16:45.018"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230120 17:16:45.018" level="INFO">Opening url 'https://studio.builder.ai/home'</msg>
+<status status="PASS" starttime="20230120 17:16:45.018" endtime="20230120 17:16:52.320"/>
+</kw>
+<status status="PASS" starttime="20230120 17:16:43.516" endtime="20230120 17:16:52.320"/>
+</kw>
+<kw name="&quot;Live Help&quot; button should offer 3 features" library="BuilderRe">
+<kw name="Skip &quot;INTRO&quot;" library="PreHomePage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CLICK_CHOOSE_A_BASE_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230120 17:16:52.321" level="INFO">Clicking element 'xpath=//*[@id="main"]/welcome-to-studio/div/div[2]/div[2]/button'.</msg>
+<status status="PASS" starttime="20230120 17:16:52.321" endtime="20230120 17:16:52.802"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CLOSE_ASSISTANT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230120 17:16:52.803" level="INFO">Clicking element 'xpath=//div[@class="closeButton"]'.</msg>
+<status status="PASS" starttime="20230120 17:16:52.802" endtime="20230120 17:16:53.268"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CLOSE_ASSISTANT_ON_HOME_PAGE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230120 17:16:53.268" level="INFO">Clicking element 'xpath=//*[@id="main"]/div[2]'.</msg>
+<status status="PASS" starttime="20230120 17:16:53.268" endtime="20230120 17:16:53.716"/>
+</kw>
+<status status="PASS" starttime="20230120 17:16:52.320" endtime="20230120 17:16:53.716"/>
+</kw>
+<kw name="Check if &quot;Live Help&quot; button works" library="TopNav">
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${TOPNAV_LIVE_HELP_BUTTON_DESCRIPTION}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20230120 17:16:54.135" level="INFO">Current page contains text 'Talk to our experts'.</msg>
+<status status="PASS" starttime="20230120 17:16:53.716" endtime="20230120 17:16:54.135"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${TOPNAV_LIVE_HELP_BUTTON}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20230120 17:16:54.135" level="INFO">Simulating Mouse Over on element 'xpath=//*[@id="header"]/div/div/div[7]/div[2]'.</msg>
+<status status="PASS" starttime="20230120 17:16:54.135" endtime="20230120 17:16:54.825"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${TOPNAV_LIVE_HELP_SUBMENU.Feature1}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230120 17:16:54.825" endtime="20230120 17:16:55.048"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${TOPNAV_LIVE_HELP_SUBMENU.Feature2}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230120 17:16:55.048" endtime="20230120 17:16:55.267"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${TOPNAV_LIVE_HELP_SUBMENU.Feature3}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230120 17:16:55.267" endtime="20230120 17:16:55.485"/>
+</kw>
+<status status="PASS" starttime="20230120 17:16:53.716" endtime="20230120 17:16:55.485"/>
+</kw>
+<status status="PASS" starttime="20230120 17:16:52.320" endtime="20230120 17:16:55.485"/>
+</kw>
+<kw name="End web test" library="Common" type="TEARDOWN">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20230120 17:16:55.486" endtime="20230120 17:16:57.918"/>
+</kw>
+<status status="PASS" starttime="20230120 17:16:55.485" endtime="20230120 17:16:57.919"/>
+</kw>
+<doc>User should see in the Top Nav the "Live Help" button. Three feature should be available.</doc>
+<tag>1006</tag>
+<tag>Smoke</tag>
+<tag>TopNav</tag>
+<status status="PASS" starttime="20230120 17:16:43.515" endtime="20230120 17:16:57.919"/>
+</test>
+<test id="s1-t7" name="User should be able to open &quot;SignUp&quot; window" line="44">
+<kw name="Begin web test" library="Common" type="SETUP">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.2s</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20230120 17:16:57.920" endtime="20230120 17:16:57.920"/>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>10s</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20230120 17:16:57.921" endtime="20230120 17:16:57.921"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230120 17:16:57.921" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20230120 17:16:57.921" endtime="20230120 17:16:59.108"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230120 17:16:59.108" endtime="20230120 17:17:03.451"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230120 17:17:03.451" level="INFO">Opening url 'https://studio.builder.ai/home'</msg>
+<status status="PASS" starttime="20230120 17:17:03.451" endtime="20230120 17:17:10.616"/>
+</kw>
+<status status="PASS" starttime="20230120 17:16:57.920" endtime="20230120 17:17:10.616"/>
+</kw>
+<kw name="&quot;SignIn&quot; button should work" library="BuilderRe">
+<kw name="Skip &quot;INTRO&quot;" library="PreHomePage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CLICK_CHOOSE_A_BASE_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230120 17:17:10.617" level="INFO">Clicking element 'xpath=//*[@id="main"]/welcome-to-studio/div/div[2]/div[2]/button'.</msg>
+<status status="PASS" starttime="20230120 17:17:10.617" endtime="20230120 17:17:11.100"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CLOSE_ASSISTANT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230120 17:17:11.101" level="INFO">Clicking element 'xpath=//div[@class="closeButton"]'.</msg>
+<status status="PASS" starttime="20230120 17:17:11.100" endtime="20230120 17:17:11.568"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CLOSE_ASSISTANT_ON_HOME_PAGE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230120 17:17:11.568" level="INFO">Clicking element 'xpath=//*[@id="main"]/div[2]'.</msg>
+<status status="PASS" starttime="20230120 17:17:11.568" endtime="20230120 17:17:12.021"/>
+</kw>
+<status status="PASS" starttime="20230120 17:17:10.616" endtime="20230120 17:17:12.021"/>
+</kw>
+<kw name="Cancel &quot;Assistant&quot;" library="PreHomePage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CLOSE_ASSISTANT_ON_HOME_PAGE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230120 17:17:12.021" level="INFO">Clicking element 'xpath=//*[@id="main"]/div[2]'.</msg>
+<status status="PASS" starttime="20230120 17:17:12.021" endtime="20230120 17:17:12.494"/>
+</kw>
+<status status="PASS" starttime="20230120 17:17:12.021" endtime="20230120 17:17:12.494"/>
+</kw>
+<kw name="Get to &quot;SignUp&quot; window" library="TopNav">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${TOPNAV_SIGNIN_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230120 17:17:12.494" level="INFO">Clicking element 'xpath=//*[@id="header"]/div/div/div[4]/ul/li/button'.</msg>
+<status status="PASS" starttime="20230120 17:17:12.494" endtime="20230120 17:17:13.037"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${TOPNAV_SIGNIN_HEADER}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230120 17:17:13.037" endtime="20230120 17:17:13.256"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${TOPNAV_SIGNUP_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230120 17:17:13.257" level="INFO">Clicking element 'xpath=//*[@id="app-component"]/div[2]/login/div/div[2]/div[3]/form/div[4]/div[2]/span'.</msg>
+<status status="PASS" starttime="20230120 17:17:13.256" endtime="20230120 17:17:13.778"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${TOPNAV_SIGNUP_HEADER}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230120 17:17:13.778" endtime="20230120 17:17:13.994"/>
+</kw>
+<status status="PASS" starttime="20230120 17:17:12.494" endtime="20230120 17:17:13.994"/>
+</kw>
+<status status="PASS" starttime="20230120 17:17:10.616" endtime="20230120 17:17:13.994"/>
+</kw>
+<kw name="End web test" library="Common" type="TEARDOWN">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20230120 17:17:13.995" endtime="20230120 17:17:16.239"/>
+</kw>
+<status status="PASS" starttime="20230120 17:17:13.994" endtime="20230120 17:17:16.239"/>
+</kw>
+<doc>User should be able to navigate to "SignUp" page using the "SignIn" button in Top Nav, and then clicking on the "Sign Up" link in the bottom.</doc>
+<tag>1007</tag>
+<tag>Smoke</tag>
+<tag>TopNav</tag>
+<status status="PASS" starttime="20230120 17:16:57.920" endtime="20230120 17:17:16.240"/>
+</test>
+<test id="s1-t8" name="User should be able to &quot;SignUp&quot; to the web site using valis credentials" line="49">
+<kw name="Begin web test" library="Common" type="SETUP">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.2s</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20230120 17:17:16.241" endtime="20230120 17:17:16.241"/>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>10s</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20230120 17:17:16.241" endtime="20230120 17:17:16.241"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230120 17:17:16.242" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20230120 17:17:16.241" endtime="20230120 17:17:17.433"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230120 17:17:17.433" endtime="20230120 17:17:17.750"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230120 17:17:17.750" level="INFO">Opening url 'https://studio.builder.ai/home'</msg>
+<status status="PASS" starttime="20230120 17:17:17.750" endtime="20230120 17:17:23.724"/>
+</kw>
+<status status="PASS" starttime="20230120 17:17:16.241" endtime="20230120 17:17:23.724"/>
+</kw>
+<kw name="Complete &quot;SignUp&quot; to the web site" library="BuilderRe">
+<arg>${VALID_USER_SIGNUP_CREDENTIALS}</arg>
+<kw name="Skip &quot;INTRO&quot;" library="PreHomePage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CLICK_CHOOSE_A_BASE_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230120 17:17:23.725" level="INFO">Clicking element 'xpath=//*[@id="main"]/welcome-to-studio/div/div[2]/div[2]/button'.</msg>
+<status status="PASS" starttime="20230120 17:17:23.725" endtime="20230120 17:17:24.232"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CLOSE_ASSISTANT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230120 17:17:24.232" level="INFO">Clicking element 'xpath=//div[@class="closeButton"]'.</msg>
+<status status="PASS" starttime="20230120 17:17:24.232" endtime="20230120 17:17:24.707"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CLOSE_ASSISTANT_ON_HOME_PAGE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230120 17:17:24.707" level="INFO">Clicking element 'xpath=//*[@id="main"]/div[2]'.</msg>
+<status status="PASS" starttime="20230120 17:17:24.707" endtime="20230120 17:17:25.160"/>
+</kw>
+<status status="PASS" starttime="20230120 17:17:23.725" endtime="20230120 17:17:25.160"/>
+</kw>
+<kw name="Cancel &quot;Assistant&quot;" library="PreHomePage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CLOSE_ASSISTANT_ON_HOME_PAGE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230120 17:17:25.161" level="INFO">Clicking element 'xpath=//*[@id="main"]/div[2]'.</msg>
+<status status="PASS" starttime="20230120 17:17:25.160" endtime="20230120 17:17:25.619"/>
+</kw>
+<status status="PASS" starttime="20230120 17:17:25.160" endtime="20230120 17:17:25.619"/>
+</kw>
+<kw name="Get to &quot;SignUp&quot; window" library="TopNav">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${TOPNAV_SIGNIN_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230120 17:17:25.619" level="INFO">Clicking element 'xpath=//*[@id="header"]/div/div/div[4]/ul/li/button'.</msg>
+<status status="PASS" starttime="20230120 17:17:25.619" endtime="20230120 17:17:26.143"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${TOPNAV_SIGNIN_HEADER}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230120 17:17:26.143" endtime="20230120 17:17:26.359"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${TOPNAV_SIGNUP_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230120 17:17:26.359" level="INFO">Clicking element 'xpath=//*[@id="app-component"]/div[2]/login/div/div[2]/div[3]/form/div[4]/div[2]/span'.</msg>
+<status status="PASS" starttime="20230120 17:17:26.359" endtime="20230120 17:17:26.870"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${TOPNAV_SIGNUP_HEADER}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230120 17:17:26.870" endtime="20230120 17:17:27.088"/>
+</kw>
+<status status="PASS" starttime="20230120 17:17:25.619" endtime="20230120 17:17:27.088"/>
+</kw>
+<kw name="Check if the &quot;SignUp&quot; feature works" library="SignUp">
+<arg>${user_info}</arg>
+<kw name="Fill Email field" library="SignUp">
+<arg>${user_info.Email}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SIGNUP_EMAIL_FIELD}</arg>
+<arg>${user_info.Email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230120 17:17:27.089" level="INFO">Typing text 'John123@example.com' into text field 'xpath=//*[@id="loginEmailInput"]'.</msg>
+<status status="PASS" starttime="20230120 17:17:27.089" endtime="20230120 17:17:27.821"/>
+</kw>
+<status status="PASS" starttime="20230120 17:17:27.088" endtime="20230120 17:17:27.821"/>
+</kw>
+<kw name="Fill Name field" library="SignUp">
+<arg>${user_info.Name}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SIGNUP_NAME_FIELD}</arg>
+<arg>${user_info.Name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230120 17:17:27.822" level="INFO">Typing text 'John' into text field 'xpath=//*[@id="app-component"]/div[2]/login/div/div[2]/div[3]/form/ul/li[2]/input'.</msg>
+<status status="PASS" starttime="20230120 17:17:27.822" endtime="20230120 17:17:28.514"/>
+</kw>
+<status status="PASS" starttime="20230120 17:17:27.821" endtime="20230120 17:17:28.514"/>
+</kw>
+<kw name="Fill PhoneNumber field" library="SignUp">
+<arg>${user_info.PhoneNumber}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SIGNUP_PHONE_FIELD}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230120 17:17:28.516" level="INFO">Clicking element 'xpath=//*[@id="app-component"]/div[2]/login/div/div[2]/div[3]/form/ul/li[3]/app-phone-number/div[1]/input[1]'.</msg>
+<status status="PASS" starttime="20230120 17:17:28.515" endtime="20230120 17:17:28.975"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SIGNUP_PHONE_FIELD}</arg>
+<arg>${user_info.PhoneNumber}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230120 17:17:28.976" level="INFO">Typing text '953855044' into text field 'xpath=//*[@id="app-component"]/div[2]/login/div/div[2]/div[3]/form/ul/li[3]/app-phone-number/div[1]/input[1]'.</msg>
+<status status="PASS" starttime="20230120 17:17:28.975" endtime="20230120 17:17:29.683"/>
+</kw>
+<status status="PASS" starttime="20230120 17:17:28.514" endtime="20230120 17:17:29.683"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SIGNUP_CLICK_CURRENCY_MENU}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230120 17:17:29.684" level="INFO">Clicking element 'xpath=//*[@id="app-component"]/div[2]/login/div/div[2]/div[3]/form/ul/li[4]/div[1]/div[1]'.</msg>
+<status status="PASS" starttime="20230120 17:17:29.683" endtime="20230120 17:17:30.139"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SIGNUP_CLICK_EURO_OPTION}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230120 17:17:30.140" level="INFO">Clicking element 'xpath=//*[@id="app-component"]/div[2]/login/div/div[2]/div[3]/form/ul/li[4]/div[1]/div[2]/ol/li[1]'.</msg>
+<status status="PASS" starttime="20230120 17:17:30.139" endtime="20230120 17:17:30.594"/>
+</kw>
+<kw name="Fill Password field" library="SignUp">
+<arg>${user_info.Password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SIGNUP_PASSWORD_FIELD}</arg>
+<arg>${user_info.Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230120 17:17:30.595" level="INFO">Typing text 'test12345' into text field 'xpath=//*[@id="app-component"]/div[2]/login/div/div[2]/div[3]/form/ul/li[5]/div[1]/input'.</msg>
+<status status="PASS" starttime="20230120 17:17:30.595" endtime="20230120 17:17:31.293"/>
+</kw>
+<status status="PASS" starttime="20230120 17:17:30.594" endtime="20230120 17:17:31.293"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SIGNUP_CLICK_AGREEMENT_CHECK_BOX}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230120 17:17:31.293" level="INFO">Clicking element 'xpath=//*[@id="app-component"]/div[2]/login/div/div[2]/div[3]/form/ul/li[6]/label'.</msg>
+<status status="PASS" starttime="20230120 17:17:31.293" endtime="20230120 17:17:31.770"/>
+</kw>
+<status status="PASS" starttime="20230120 17:17:27.088" endtime="20230120 17:17:31.770"/>
+</kw>
+<status status="PASS" starttime="20230120 17:17:23.724" endtime="20230120 17:17:31.770"/>
+</kw>
+<kw name="End web test" library="Common" type="TEARDOWN">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20230120 17:17:31.771" endtime="20230120 17:17:34.009"/>
+</kw>
+<status status="PASS" starttime="20230120 17:17:31.771" endtime="20230120 17:17:34.009"/>
+</kw>
+<doc>User should be able to sign up to the web site providing valid sign in info.</doc>
+<tag>1008</tag>
+<tag>Functional</tag>
+<tag>SignUp</tag>
+<status status="PASS" starttime="20230120 17:17:16.241" endtime="20230120 17:17:34.010"/>
+</test>
+<doc>This is a Solo project for Automatization testing the BuilderAI site.</doc>
+<status status="FAIL" starttime="20230120 17:14:51.224" endtime="20230120 17:17:34.010"/>
+</suite>
+<statistics>
+<total>
+<stat pass="7" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">1001</stat>
+<stat pass="1" fail="0" skip="0">1002</stat>
+<stat pass="1" fail="0" skip="0">1003</stat>
+<stat pass="1" fail="0" skip="0">1004</stat>
+<stat pass="0" fail="1" skip="0">1005</stat>
+<stat pass="1" fail="0" skip="0">1006</stat>
+<stat pass="1" fail="0" skip="0">1007</stat>
+<stat pass="1" fail="0" skip="0">1008</stat>
+<stat pass="1" fail="0" skip="0">Functional</stat>
+<stat pass="3" fail="0" skip="0">HomePage</stat>
+<stat pass="1" fail="0" skip="0">PreHomePage</stat>
+<stat pass="1" fail="0" skip="0">SignUp</stat>
+<stat pass="6" fail="1" skip="0">Smoke</stat>
+<stat pass="2" fail="1" skip="0">TopNav</stat>
+</tag>
+<suite>
+<stat pass="7" fail="1" skip="0" id="s1" name="Builder">Builder</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
