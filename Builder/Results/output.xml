@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.1 (Python 3.11.1 on win32)" generated="20230201 17:58:59.024" rpa="false" schemaversion="3">
+<suite id="s1" name="BuilderUser" source="C:\development\robot-scripts\Builder\Tests\BuilderUser.robot">
+<test id="s1-t1" name="User should be able to pick a card he wants to start his project" line="31">
+<kw name="Begin web test &quot;User&quot;" library="Common" type="SETUP">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.2s</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20230201 17:58:59.472" endtime="20230201 17:58:59.472"/>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>10s</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20230201 17:58:59.472" endtime="20230201 17:58:59.472"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230201 17:58:59.472" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20230201 17:58:59.472" endtime="20230201 17:59:00.684"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230201 17:59:00.684" endtime="20230201 17:59:01.009"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${BASE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230201 17:59:01.009" level="INFO">Opening url 'https://studio.builder.ai/home'</msg>
+<status status="PASS" starttime="20230201 17:59:01.009" endtime="20230201 17:59:04.173"/>
+</kw>
+<kw name="Skip PreHomePage steps" library="PreHomePage">
+<kw name="Skip &quot;INTRO&quot;" library="PreHomePage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CLICK_CHOOSE_A_BASE_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230201 17:59:04.174" level="INFO">Clicking element 'xpath=//*[@id="main"]/welcome-to-studio/div/div[2]/div[2]/button'.</msg>
+<status status="PASS" starttime="20230201 17:59:04.173" endtime="20230201 17:59:04.658"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CLOSE_ASSISTANT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230201 17:59:04.658" level="INFO">Clicking element 'xpath=//div[@class="closeButton"]'.</msg>
+<status status="PASS" starttime="20230201 17:59:04.658" endtime="20230201 17:59:05.225"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CLOSE_ASSISTANT_ON_HOME_PAGE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230201 17:59:05.225" level="INFO">Clicking element 'xpath=//*[@id="app-component"]/div[1]'.</msg>
+<status status="PASS" starttime="20230201 17:59:05.225" endtime="20230201 17:59:05.694"/>
+</kw>
+<status status="PASS" starttime="20230201 17:59:04.173" endtime="20230201 17:59:05.694"/>
+</kw>
+<kw name="Cancel &quot;Assistant&quot;" library="PreHomePage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CLOSE_ASSISTANT_ON_HOME_PAGE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230201 17:59:05.695" level="INFO">Clicking element 'xpath=//*[@id="app-component"]/div[1]'.</msg>
+<status status="PASS" starttime="20230201 17:59:05.694" endtime="20230201 17:59:06.140"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CANCEL_CARD}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230201 17:59:06.140" level="INFO">Clicking element 'xpath=//div[contains(@class, 'rightBlock')]'.</msg>
+<status status="PASS" starttime="20230201 17:59:06.140" endtime="20230201 17:59:06.605"/>
+</kw>
+<status status="PASS" starttime="20230201 17:59:05.694" endtime="20230201 17:59:06.605"/>
+</kw>
+<status status="PASS" starttime="20230201 17:59:04.173" endtime="20230201 17:59:06.605"/>
+</kw>
+<kw name="Click &quot;SignIn Button&quot;" library="TopNav">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${TOPNAV_SIGNIN_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230201 17:59:06.606" level="INFO">Clicking element 'xpath=//*[@id="header"]/div/div/div[4]/ul/li/button'.</msg>
+<status status="PASS" starttime="20230201 17:59:06.605" endtime="20230201 17:59:07.146"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${TOPNAV_SIGNIN_HEADER}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230201 17:59:07.146" endtime="20230201 17:59:07.366"/>
+</kw>
+<status status="PASS" starttime="20230201 17:59:06.605" endtime="20230201 17:59:07.366"/>
+</kw>
+<kw name="Check if &quot;Sign In&quot; feature works" library="SignIn">
+<arg>${VALID_USER_SIGNIN_CREDENTIALS}</arg>
+<kw name="Fill &quot;Email&quot; field" library="SignIn">
+<arg>${user_info.Email}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SIGNIN_EMAIL_FIELD}</arg>
+<arg>${user_info.Email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230201 17:59:07.368" level="INFO">Typing text 'jedirad522@letpays.com' into text field 'xpath=//*[@id="loginEmailInput"]'.</msg>
+<status status="PASS" starttime="20230201 17:59:07.367" endtime="20230201 17:59:08.089"/>
+</kw>
+<status status="PASS" starttime="20230201 17:59:07.366" endtime="20230201 17:59:08.089"/>
+</kw>
+<kw name="Fill &quot;Password&quot; field" library="SignIn">
+<arg>${user_info.Password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SIGNIN_PASSWORD_FIELD}</arg>
+<arg>${user_info.Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230201 17:59:08.090" level="INFO">Typing text 'prica12345' into text field 'xpath=//*[@id="app-component"]/div[2]/login/div/div[2]/div[3]/form/ul/li[2]/div[2]/input'.</msg>
+<status status="PASS" starttime="20230201 17:59:08.090" endtime="20230201 17:59:08.792"/>
+</kw>
+<status status="PASS" starttime="20230201 17:59:08.089" endtime="20230201 17:59:08.792"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SIGNIN_CLICK_SUBMIT_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230201 17:59:08.792" level="INFO">Clicking element 'xpath=//*[@id="app-component"]/div[2]/login/div/div[2]/div[3]/form/div[4]/div[1]'.</msg>
+<status status="PASS" starttime="20230201 17:59:08.792" endtime="20230201 17:59:09.247"/>
+</kw>
+<kw name="Verify user logged in" library="SignIn">
+<kw name="Wait Until Page Does Not Contain Element" library="SeleniumLibrary">
+<arg>${SIGNIN_VERIFY_USER_SIGNED_IN}</arg>
+<doc>Waits until the element ``locator`` disappears from the current page.</doc>
+<status status="PASS" starttime="20230201 17:59:09.247" endtime="20230201 17:59:09.457"/>
+</kw>
+<status status="PASS" starttime="20230201 17:59:09.247" endtime="20230201 17:59:09.457"/>
+</kw>
+<status status="PASS" starttime="20230201 17:59:07.366" endtime="20230201 17:59:09.457"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230201 17:59:10.458" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20230201 17:59:09.457" endtime="20230201 17:59:10.458"/>
+</kw>
+<status status="PASS" starttime="20230201 17:58:59.471" endtime="20230201 17:59:10.458"/>
+</kw>
+<kw name="User should be able to pick a card" library="BuilderRe">
+<kw name="Check if card loaded on page" library="HomePage">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${HOME_PAGE_VERFY_CARD_LOADED}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230201 17:59:10.459" endtime="20230201 17:59:12.771"/>
+</kw>
+<status status="PASS" starttime="20230201 17:59:10.458" endtime="20230201 17:59:12.771"/>
+</kw>
+<kw name="Check if &quot;Home Page&quot; title is correct" library="HomePage">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${HOME_PAGE_TITLE}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230201 17:59:12.771" endtime="20230201 17:59:12.982"/>
+</kw>
+<status status="PASS" starttime="20230201 17:59:12.771" endtime="20230201 17:59:12.982"/>
+</kw>
+<kw name="Check if User can pick a card he wants to build" library="CreatingProject">
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>${cards}</var>
+<arg>${CREATING_CARD_CARD_SELECTOR}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20230201 17:59:13.192" level="INFO">${cards} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="bc6e6fa01fb8e9527c82150da6e48320", element="a9a78d73-34bc-4a2f-8494-87a70375d167")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (sessi...</msg>
+<status status="PASS" starttime="20230201 17:59:12.983" endtime="20230201 17:59:13.192"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${card_count}</var>
+<arg>${cards}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20230201 17:59:13.192" level="INFO">Length is 15</msg>
+<msg timestamp="20230201 17:59:13.192" level="INFO">${card_count} = 15</msg>
+<status status="PASS" starttime="20230201 17:59:13.192" endtime="20230201 17:59:13.192"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random_index}</var>
+<arg>random.randint(0, ${card_count}-1)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230201 17:59:13.192" level="INFO">${random_index} = 12</msg>
+<status status="PASS" starttime="20230201 17:59:13.192" endtime="20230201 17:59:13.192"/>
+</kw>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>${random_card}</var>
+<arg>${cards}[${random_index}]</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20230201 17:59:13.193" level="INFO">${random_card} = &lt;selenium.webdriver.remote.webelement.WebElement (session="bc6e6fa01fb8e9527c82150da6e48320", element="f6c16f8e-3720-4781-b16e-3618251316cf")&gt;</msg>
+<status status="PASS" starttime="20230201 17:59:13.192" endtime="20230201 17:59:13.193"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${HOME_PAGE_FOOTER}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20230201 17:59:13.193" endtime="20230201 17:59:13.874"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${random_card}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20230201 17:59:13.874" endtime="20230201 17:59:14.297"/>
+</kw>
+<kw name="Set Focus To Element" library="SeleniumLibrary">
+<arg>${random_card}</arg>
+<doc>Sets the focus to the element identified by ``locator``.</doc>
+<status status="PASS" starttime="20230201 17:59:14.297" endtime="20230201 17:59:14.512"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${random_card}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230201 17:59:14.512" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="bc6e6fa01fb8e9527c82150da6e48320", element="f6c16f8e-3720-4781-b16e-3618251316cf")&gt;'.</msg>
+<status status="PASS" starttime="20230201 17:59:14.512" endtime="20230201 17:59:14.779"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${CREATING_PROJECT_VERIFY_USER_PICK_CARD}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230201 17:59:14.779" endtime="20230201 17:59:14.992"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CREATING_PROJECT_CLICK_BUILD_NOW_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230201 17:59:14.992" level="INFO">Clicking element 'xpath=//div[contains(@class, 'rightSide')]//span[contains(text(), 'Build Now')]'.</msg>
+<status status="PASS" starttime="20230201 17:59:14.992" endtime="20230201 17:59:15.470"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230201 17:59:18.471" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230201 17:59:15.470" endtime="20230201 17:59:18.471"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${CREATING_PROJECT_VERIFY_PROJECT_LOADED}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230201 17:59:18.471" endtime="20230201 17:59:18.683"/>
+</kw>
+<status status="PASS" starttime="20230201 17:59:12.982" endtime="20230201 17:59:18.683"/>
+</kw>
+<status status="PASS" starttime="20230201 17:59:10.458" endtime="20230201 17:59:18.683"/>
+</kw>
+<kw name="User should be able to delete features" library="BuilderRe">
+<kw name="Check if User can delete features" library="CreatingProject">
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230201 17:59:23.684" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230201 17:59:18.684" endtime="20230201 17:59:23.684"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${CREATING_PROJECT_VERIFY_CART_LOADED}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230201 17:59:23.684" endtime="20230201 17:59:23.898"/>
+</kw>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>${projects}</var>
+<arg>${CREATING_PROJECT_FEATURE_SELECTOR}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20230201 17:59:24.107" level="INFO">${projects} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="bc6e6fa01fb8e9527c82150da6e48320", element="51c006b2-d122-44de-8ed8-3c2cc3a08794")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (sessi...</msg>
+<status status="PASS" starttime="20230201 17:59:23.898" endtime="20230201 17:59:24.107"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${project_count}</var>
+<arg>${projects}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20230201 17:59:24.107" level="INFO">Length is 23</msg>
+<msg timestamp="20230201 17:59:24.107" level="INFO">${project_count} = 23</msg>
+<status status="PASS" starttime="20230201 17:59:24.107" endtime="20230201 17:59:24.107"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random_index}</var>
+<arg>random.randint(0, ${project_count}-1)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230201 17:59:24.107" level="INFO">${random_index} = 8</msg>
+<status status="PASS" starttime="20230201 17:59:24.107" endtime="20230201 17:59:24.107"/>
+</kw>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>${random_project}</var>
+<arg>${projects}[${random_index}]</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20230201 17:59:24.108" level="INFO">${random_project} = &lt;selenium.webdriver.remote.webelement.WebElement (session="bc6e6fa01fb8e9527c82150da6e48320", element="18e0b885-ae0f-4b7b-950c-19356bec934c")&gt;</msg>
+<status status="PASS" starttime="20230201 17:59:24.107" endtime="20230201 17:59:24.108"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${random_project}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20230201 17:59:24.108" level="INFO">Simulating Mouse Over on element '&lt;selenium.webdriver.remote.webelement.WebElement (session="bc6e6fa01fb8e9527c82150da6e48320", element="18e0b885-ae0f-4b7b-950c-19356bec934c")&gt;'.</msg>
+<status status="PASS" starttime="20230201 17:59:24.108" endtime="20230201 17:59:24.664"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${random_project}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230201 17:59:24.665" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="bc6e6fa01fb8e9527c82150da6e48320", element="18e0b885-ae0f-4b7b-950c-19356bec934c")&gt;'.</msg>
+<status status="PASS" starttime="20230201 17:59:24.664" endtime="20230201 17:59:24.915"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${total_project_cost}</var>
+<arg>${CREATING_CARD_TOTAL_PRICE}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230201 17:59:25.340" level="INFO">${total_project_cost} = €17,460.00</msg>
+<status status="PASS" starttime="20230201 17:59:24.915" endtime="20230201 17:59:25.340"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${feature_cost}</var>
+<arg>${CREATING_CARD_FEATURE_PRICE}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230201 17:59:25.764" level="INFO">${feature_cost} = €722.94
+5.0 days</msg>
+<status status="PASS" starttime="20230201 17:59:25.340" endtime="20230201 17:59:25.764"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${CREATING_CARD_REMOVE_FETURE_BUTTON}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20230201 17:59:25.764" level="INFO">Simulating Mouse Over on element 'xpath=//div[contains(@class, 'featureDescription')]//em[contains(@class, 'icon-delete')]'.</msg>
+<status status="PASS" starttime="20230201 17:59:25.764" endtime="20230201 17:59:26.452"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CREATING_CARD_REMOVE_FETURE_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230201 17:59:26.452" level="INFO">Clicking element 'xpath=//div[contains(@class, 'featureDescription')]//em[contains(@class, 'icon-delete')]'.</msg>
+<status status="PASS" starttime="20230201 17:59:26.452" endtime="20230201 17:59:26.890"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230201 17:59:28.891" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230201 17:59:26.890" endtime="20230201 17:59:28.891"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${popup_exists}</var>
+<arg>Check if pop up shows</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Check if pop up shows" library="CreatingProject">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${CREATING_CARD_VERIFY_POP_UP}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<msg timestamp="20230201 17:59:39.416" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-36.png"&gt;&lt;img src="selenium-screenshot-36.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230201 17:59:39.416" level="FAIL">Element 'xpath=//div[contains(@class, 'commonPopUp active')]//h3[contains(text(), 'remove it?')]' did not appear in 10 seconds.</msg>
+<status status="FAIL" starttime="20230201 17:59:28.891" endtime="20230201 17:59:39.418"/>
+</kw>
+<status status="FAIL" starttime="20230201 17:59:28.891" endtime="20230201 17:59:39.418"/>
+</kw>
+<msg timestamp="20230201 17:59:39.418" level="INFO">${popup_exists} = False</msg>
+<status status="PASS" starttime="20230201 17:59:28.891" endtime="20230201 17:59:39.418"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${popup_exists}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230201 17:59:39.418" level="INFO">False</msg>
+<status status="PASS" starttime="20230201 17:59:39.418" endtime="20230201 17:59:39.418"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${popup_exists}" == "True"</arg>
+<arg>Click to verify feature deletion</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230201 17:59:39.418" endtime="20230201 17:59:39.419"/>
+</kw>
+<status status="PASS" starttime="20230201 17:59:18.683" endtime="20230201 17:59:39.419"/>
+</kw>
+<status status="PASS" starttime="20230201 17:59:18.683" endtime="20230201 17:59:39.419"/>
+</kw>
+<kw name="End web test" library="Common" type="TEARDOWN">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20230201 17:59:39.420" endtime="20230201 17:59:41.663"/>
+</kw>
+<status status="PASS" starttime="20230201 17:59:39.419" endtime="20230201 17:59:41.663"/>
+</kw>
+<doc>User should be able to choose any card on the home page in order to start his project based on the card he picked.</doc>
+<tag>1004</tag>
+<tag>Functional</tag>
+<tag>ProjectMenu</tag>
+<status status="PASS" starttime="20230201 17:58:59.471" endtime="20230201 17:59:41.663"/>
+</test>
+<doc>This is a Solo project for Automatization testing the BuilderAI site.</doc>
+<status status="PASS" starttime="20230201 17:58:59.025" endtime="20230201 17:59:41.664"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">1004</stat>
+<stat pass="1" fail="0" skip="0">Functional</stat>
+<stat pass="1" fail="0" skip="0">ProjectMenu</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="BuilderUser">BuilderUser</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
